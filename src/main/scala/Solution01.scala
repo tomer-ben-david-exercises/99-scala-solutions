@@ -18,6 +18,6 @@ class Solution01 extends FlatSpec with ShouldMatchers {
   def lastWithRecursion(input: Seq[Int]): Try[Int] = input match {
       case head :: Nil => Success(head)
       case _ :: tail => lastWithRecursion(tail)
-      case _ => Failure(new NoSuchElementException("No such element"))
+      case _ => Failure(new NoSuchElementException("No such element")) // how to avoid inffered type containing nothing.
   }
 }
