@@ -37,15 +37,15 @@ licenses += "Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.html
 
 // homepage := Some(url("http://project.org"))
 
-scalaSource in Compile := baseDirectory.value / "src"
-
-javaSource in Compile := baseDirectory.value / "src"
-
-scalaSource in Test := baseDirectory.value / "test"
-
-javaSource in Test := baseDirectory.value / "test"
-
-resourceDirectory in Test := (scalaSource in Test).value / "resources"
+//scalaSource in Compile := baseDirectory.value / "src/main/scala"
+//
+//javaSource in Compile := baseDirectory.value / "src/main/java"
+//
+//scalaSource in Test := baseDirectory.value / "src/test/scala"
+//
+//javaSource in Test := baseDirectory.value / "src/test/java"
+//
+//resourceDirectory in Test := (scalaSource in Test).value / "resources"
 
 /*
  * scalac configuration
@@ -169,10 +169,10 @@ libraryDependencies ++= Seq(
 , "org.joda"                          % "joda-money"                       % "0.10.0"
 , "org.jsoup"                         % "jsoup"                            % "1.8.3"
 , "org.scalactic"                    %% "scalactic"                        % "2.2.5"
-, "org.mockito"                       % "mockito-core"                     % "1.10.19"      % Test
-, "org.scalamock"                    %% "scalamock-scalatest-support"      % "3.2.2"        % Test
-, "org.scalatest"                    %% "scalatest"                        % "2.2.5"        % Test
-, "org.seleniumhq.selenium"           % "selenium-java"                    % "2.48.2"       % Test
+, "org.mockito"                       % "mockito-core"                     % "1.10.19"
+, "org.scalamock"                    %% "scalamock-scalatest-support"      % "3.2.2"
+, "org.scalatest"                    %% "scalatest"                        % "2.2.5"
+, "org.seleniumhq.selenium"           % "selenium-java"                    % "2.48.2"
 )
 
 /*
@@ -239,14 +239,13 @@ wartremoverErrors ++= Seq(
 , Wart.ListOps
 //Wart.MutableDataStructures
 , Wart.NonUnitStatements
-, Wart.Nothing
+//, Wart.Nothing
 , Wart.Null
 , Wart.Option2Iterable
 , Wart.OptionPartial
 , Wart.Product
 , Wart.Return
 , Wart.Serializable
-, Wart.Throw
 //Wart.ToString
 , Wart.TryPartial
 , Wart.Var
