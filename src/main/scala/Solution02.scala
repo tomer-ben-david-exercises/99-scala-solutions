@@ -18,6 +18,6 @@ class Solution02 extends FlatSpec with ShouldMatchers {
   def penultimateRecur(input: Seq[Int]): Try[Int] = input match {
     case prevTail :: tail :: Nil => Success(prevTail)
     case head :: tail => penultimateRecur(tail)
-    case _ => Failure[Int](new NoSuchElementException("No such element")) // how to avoid inferred type containing nothing.
+    case _ => Failure[Int](new NoSuchElementException("No such element"))
   }
 }
