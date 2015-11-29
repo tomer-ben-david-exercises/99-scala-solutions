@@ -22,6 +22,6 @@ class Solution03 extends FlatSpec with ShouldMatchers {
   def kthRecur(input: Seq[Int], kthIndex: Int): Try[Int] = kthIndex match {
     case k if k > 0 => kthRecur(input.drop(1), k - 1)
     case k if k == 0 => Success(input.head)
-    case _ => Failure[Int](new NoSuchElementException("No such element")) // how to avoid inferred type containing nothing.
+    case _ => Failure[Int](new NoSuchElementException("No such element"))
   }
 }
