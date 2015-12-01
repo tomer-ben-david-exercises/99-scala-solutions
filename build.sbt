@@ -240,7 +240,7 @@ wartremoverErrors ++= Seq(
 //Wart.MutableDataStructures
 , Wart.NonUnitStatements
 , Wart.Nothing
-, Wart.Throw
+//, Wart.Throw
 , Wart.Null
 , Wart.Option2Iterable
 , Wart.OptionPartial

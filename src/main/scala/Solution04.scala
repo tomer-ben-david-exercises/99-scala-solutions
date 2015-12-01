@@ -16,6 +16,6 @@ class Solution04 extends FlatSpec with ShouldMatchers {
 
   def sizeRecur(input: Seq[Int], curSize: Int): Try[Int] = input match {
     case Nil => Success(curSize)
-    case _ => sizeRecur(input.tail, curSize + 1)
+    case head :: tail => sizeRecur(tail, curSize + 1)
   }
 }
