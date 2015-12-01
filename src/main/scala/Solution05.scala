@@ -1,5 +1,6 @@
 import org.scalatest.{FlatSpec, ShouldMatchers}
 
+import scala.annotation.tailrec
 import scala.util.{Success, Try}
 
 /**
@@ -14,7 +15,7 @@ class Solution05 extends FlatSpec with ShouldMatchers {
     reverse(list) should be (List(8,5,3,2,1,1))
   }
 
-  def reverse(list: Seq[Int]): Seq[Int] = list match {
+  private def reverse(list: Seq[Int]): Seq[Int] = list match {
     case head :: tail => reverse(tail) :+ head
     case _ => list
   }
