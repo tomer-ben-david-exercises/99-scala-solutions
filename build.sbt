@@ -53,47 +53,47 @@ licenses += "Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.html
 
 scalaVersion in ThisBuild := "2.11.7"
 
-val commonScalacOptions = Seq(
-  "-encoding", "UTF-8" // Specify character encoding used by source files
-, "-target:jvm-1.8" // Target platform for object files
-, "-Xexperimental" // Enable experimental extensions
-, "-Xfuture" // Turn on future language features
-, "-Ybackend:GenBCode" // Choice of bytecode emitter
-)
+//val commonScalacOptions = Seq(
+//  "-encoding", "UTF-8" // Specify character encoding used by source files
+//, "-target:jvm-1.8" // Target platform for object files
+//, "-Xexperimental" // Enable experimental extensions
+//, "-Xfuture" // Turn on future language features
+//, "-Ybackend:GenBCode" // Choice of bytecode emitter
+//)
+//
+//scalacOptions ++= commonScalacOptions ++ Seq(
+//  "-deprecation" // Emit warning and location for usages of deprecated APIs
+//, "-feature" // Emit warning and location for usages of features that should be imported explicitly
+//, "-g:vars" // Set level of generated debugging info: none, source, line, vars, notailcalls
+////"-language:_" // Enable or disable language features (see list below)
+//, "-optimise" // Generates faster bytecode by applying optimisations to the program
+//, "-unchecked" // Enable additional warnings where generated code depends on assumptions
+////"-Xdev" // Indicates user is a developer - issue warnings about anything which seems amiss (Doesn't play well with ScalaTest)
+//, "-Xfatal-warnings" // Fail the compilation if there are any warnings
+//, "-Xlint:_" // Enable or disable specific warnings (see list below)
+//, "-Yclosure-elim" // Perform closure elimination
+//, "-Yconst-opt" // Perform optimization with constant values
+//, "-Ydead-code" // Perform dead code elimination
+//, "-Yinline" // Perform inlining when possible
+//, "-Yinline-handlers" // Perform exception handler inlining when possible
+//, "-Yinline-warnings" // Emit inlining warnings
+//, "-Yno-adapted-args" // Do not adapt an argument list to match the receiver
+////"-Yno-imports" // Compile without importing scala.*, java.lang.*, or Predef
+////"-Yno-predef" // Compile without importing Predef
+//, "-Yopt:_" // Enable optimizations
+//, "-Ywarn-dead-code" // Warn when dead code is identified
+////"-Ywarn-numeric-widen" // Warn when numerics are widened (Not really useful)
+//, "-Ywarn-unused" // Warn when local and private vals, vars, defs, and types are unused
+//, "-Ywarn-unused-import" // Warn when imports are unused
+//, "-Ywarn-value-discard" // Warn when non-Unit expression results are unused
+//)
 
-scalacOptions ++= commonScalacOptions ++ Seq(
-  "-deprecation" // Emit warning and location for usages of deprecated APIs
-, "-feature" // Emit warning and location for usages of features that should be imported explicitly
-, "-g:vars" // Set level of generated debugging info: none, source, line, vars, notailcalls
-//"-language:_" // Enable or disable language features (see list below)
-, "-optimise" // Generates faster bytecode by applying optimisations to the program
-, "-unchecked" // Enable additional warnings where generated code depends on assumptions
-//"-Xdev" // Indicates user is a developer - issue warnings about anything which seems amiss (Doesn't play well with ScalaTest)
-, "-Xfatal-warnings" // Fail the compilation if there are any warnings
-, "-Xlint:_" // Enable or disable specific warnings (see list below)
-, "-Yclosure-elim" // Perform closure elimination
-, "-Yconst-opt" // Perform optimization with constant values
-, "-Ydead-code" // Perform dead code elimination
-, "-Yinline" // Perform inlining when possible
-, "-Yinline-handlers" // Perform exception handler inlining when possible
-, "-Yinline-warnings" // Emit inlining warnings
-, "-Yno-adapted-args" // Do not adapt an argument list to match the receiver
-//"-Yno-imports" // Compile without importing scala.*, java.lang.*, or Predef
-//"-Yno-predef" // Compile without importing Predef
-, "-Yopt:_" // Enable optimizations
-, "-Ywarn-dead-code" // Warn when dead code is identified
-//"-Ywarn-numeric-widen" // Warn when numerics are widened (Not really useful)
-, "-Ywarn-unused" // Warn when local and private vals, vars, defs, and types are unused
-, "-Ywarn-unused-import" // Warn when imports are unused
-, "-Ywarn-value-discard" // Warn when non-Unit expression results are unused
-)
+//scalacOptions in (Compile, console) := commonScalacOptions ++ Seq(
+//  "-language:_" // Enable or disable language features (see list below)
+//, "-nowarn" // Generate no warnings
+//)
 
-scalacOptions in (Compile, console) := commonScalacOptions ++ Seq(
-  "-language:_" // Enable or disable language features (see list below)
-, "-nowarn" // Generate no warnings
-)
-
-scalacOptions in (Test, console) := (scalacOptions in (Compile, console)).value
+//scalacOptions in (Test, console) := (scalacOptions in (Compile, console)).value
 
 
 /*
@@ -226,31 +226,31 @@ testScalastyle := org.scalastyle.sbt.ScalastylePlugin.scalastyle.in(Test).toTask
  * WartRemover: http://github.com/puffnfresh/wartremover
  */
 
-wartremoverErrors ++= Seq(
-  Wart.Any
-, Wart.Any2StringAdd
-, Wart.AsInstanceOf
-, Wart.EitherProjectionPartial
-//Wart.Enumeration
-, Wart.ExplicitImplicitTypes
-, Wart.FinalCaseClass
-, Wart.IsInstanceOf
-, Wart.JavaConversions
-, Wart.ListOps
-//Wart.MutableDataStructures
-, Wart.NonUnitStatements
-, Wart.Nothing
-//, Wart.Throw
-, Wart.Null
-, Wart.Option2Iterable
-, Wart.OptionPartial
-, Wart.Product
-, Wart.Return
-, Wart.Serializable
-//Wart.ToString
-, Wart.TryPartial
-, Wart.Var
-)
+//wartremoverErrors ++= Seq(
+//  Wart.Any
+//, Wart.Any2StringAdd
+//, Wart.AsInstanceOf
+//, Wart.EitherProjectionPartial
+////Wart.Enumeration
+//, Wart.ExplicitImplicitTypes
+//, Wart.FinalCaseClass
+//, Wart.IsInstanceOf
+//, Wart.JavaConversions
+//, Wart.ListOps
+////Wart.MutableDataStructures
+//, Wart.NonUnitStatements
+//, Wart.Nothing
+////, Wart.Throw
+//, Wart.Null
+//, Wart.Option2Iterable
+//, Wart.OptionPartial
+//, Wart.Product
+//, Wart.Return
+//, Wart.Serializable
+////Wart.ToString
+//, Wart.TryPartial
+//, Wart.Var
+//)
 
 /*
  * Scapegoat: http://github.com/sksamuel/scalac-scapegoat-plugin
@@ -264,108 +264,108 @@ scapegoatDisabledInspections := Seq()
 
 addCompilerPlugin("org.psywerx.hairyfotr" %% "linter" % "0.1.12")
 
-scalacOptions += "-P:linter:enable-only:" +
-  "AssigningOptionToNull+" +
-  "AvoidOptionCollectionSize+" +
-  "AvoidOptionMethod+" +
-  "AvoidOptionStringSize+" +
-  "BigDecimalNumberFormat+" +
-  "BigDecimalPrecisionLoss+" +
-  "CloseSourceFile+" +
-  "ContainsTypeMismatch+" +
-  "DecomposingEmptyCollection+" +
-  "DivideByOne+" +
-  "DivideByZero+" +
-  "DuplicateIfBranches+" +
-  "DuplicateKeyInMap+" +
-  "EmptyStringInterpolator+" +
-  "FilterFirstThenSort+" +
-  "FuncFirstThenMap+" +
-  "IdenticalCaseBodies+" +
-  "IdenticalCaseConditions+" +
-  "IdenticalIfCondition+" +
-  "IdenticalIfElseCondition+" +
-  "IdenticalStatements+" +
-  "IfDoWhile+" +
-  "IndexingWithNegativeNumber+" +
-  "InefficientUseOfListSize+" +
-  "IntDivisionAssignedToFloat+" +
-  "InvalidParamToRandomNextInt+" +
-  "InvalidStringConversion+" +
-  "InvalidStringFormat+" +
-  "InvariantCondition+" +
-  "InvariantExtrema+" +
-  "InvariantReturn+" +
-  "JavaConverters+" +
-  "LikelyIndexOutOfBounds+" +
-  "MalformedSwap+" +
-  "MergeMaps+" +
-  "MergeNestedIfs+" +
-  "ModuloByOne+" +
-  "NumberInstanceOf+" +
-  "OnceEvaluatedStatementsInBlockReturningFunction+" +
-  "OperationAlwaysProducesZero+" +
-  "OptionOfOption+" +
-  "PassPartialFunctionDirectly+" +
-  "PatternMatchConstant+" +
-  "PossibleLossOfPrecision+" +
-  "PreferIfToBooleanMatch+" +
-  "ProducesEmptyCollection+" +
-  "ReflexiveAssignment+" +
-  "ReflexiveComparison+" +
-  "RegexWarning+" +
-  "StringMultiplicationByNonPositive+" +
-  "SuspiciousMatches+" +
-  "TransformNotMap+" +
-  "TypeToType+" +
-  "UndesirableTypeInference+" +
-  "UnextendedSealedTrait+" +
-  "UnitImplicitOrdering+" +
-  "UnlikelyEquality+" +
-  "UnlikelyToString+" +
-  "UnnecessaryMethodCall+" +
-  "UnnecessaryReturn+" +
-  "UnnecessaryStringIsEmpty+" +
-  "UnnecessaryStringNonEmpty+" +
-  "UnsafeAbs+" +
-  "UnthrownException+" +
-  "UnusedForLoopIteratorValue+" +
-  "UnusedParameter+" +
-  "UseAbsNotSqrtSquare+" +
-  "UseCbrt+" +
-  "UseConditionDirectly+" +
-  "UseContainsNotExistsEquals+" +
-  "UseCountNotFilterLength+" +
-  "UseExistsNotCountCompare+" +
-  "UseExistsNotFilterEmpty+" +
-  "UseExistsNotFilterIsEmpty+" +
-  "UseExistsNotFindIsDefined+" +
-  "UseExp+" +
-  "UseExpm1+" +
-  "UseFilterNotFlatMap+" +
-  "UseFindNotFilterHead+" +
-  "UseFlattenNotFilterOption+" +
-  "UseFuncNotFold+" +
-  "UseFuncNotReduce+" +
-  "UseGetOrElseOnOption+" +
-  "UseHypot+" +
-  "UseIfExpression+" +
-  "UseIsNanNotNanComparison+" +
-  "UseIsNanNotSelfComparison+" +
-  "UseLog10+" +
-  "UseLog1p+" +
-  "UseMapNotFlatMap+" +
-  "UseMinOrMaxNotSort+" +
-  "UseOptionGetOrElse+" +
-  "UseOptionOrNull+" +
-  "UseQuantifierFuncNotFold+" +
-  "UseSignum+" +
-  "UseSqrt+" +
-  "UseUntilNotToMinusOne+" +
-  "VariableAssignedUnusedValue+" +
-  "WrapNullWithOption+" +
-  "YodaConditions+" +
-  "ZeroDivideBy"
+//scalacOptions += "-P:linter:enable-only:" +
+//  "AssigningOptionToNull+" +
+//  "AvoidOptionCollectionSize+" +
+//  "AvoidOptionMethod+" +
+//  "AvoidOptionStringSize+" +
+//  "BigDecimalNumberFormat+" +
+//  "BigDecimalPrecisionLoss+" +
+//  "CloseSourceFile+" +
+//  "ContainsTypeMismatch+" +
+//  "DecomposingEmptyCollection+" +
+//  "DivideByOne+" +
+//  "DivideByZero+" +
+//  "DuplicateIfBranches+" +
+//  "DuplicateKeyInMap+" +
+//  "EmptyStringInterpolator+" +
+//  "FilterFirstThenSort+" +
+//  "FuncFirstThenMap+" +
+//  "IdenticalCaseBodies+" +
+//  "IdenticalCaseConditions+" +
+//  "IdenticalIfCondition+" +
+//  "IdenticalIfElseCondition+" +
+//  "IdenticalStatements+" +
+//  "IfDoWhile+" +
+//  "IndexingWithNegativeNumber+" +
+//  "InefficientUseOfListSize+" +
+//  "IntDivisionAssignedToFloat+" +
+//  "InvalidParamToRandomNextInt+" +
+//  "InvalidStringConversion+" +
+//  "InvalidStringFormat+" +
+//  "InvariantCondition+" +
+//  "InvariantExtrema+" +
+//  "InvariantReturn+" +
+//  "JavaConverters+" +
+//  "LikelyIndexOutOfBounds+" +
+//  "MalformedSwap+" +
+//  "MergeMaps+" +
+//  "MergeNestedIfs+" +
+//  "ModuloByOne+" +
+//  "NumberInstanceOf+" +
+//  "OnceEvaluatedStatementsInBlockReturningFunction+" +
+//  "OperationAlwaysProducesZero+" +
+//  "OptionOfOption+" +
+//  "PassPartialFunctionDirectly+" +
+//  "PatternMatchConstant+" +
+//  "PossibleLossOfPrecision+" +
+//  "PreferIfToBooleanMatch+" +
+//  "ProducesEmptyCollection+" +
+//  "ReflexiveAssignment+" +
+//  "ReflexiveComparison+" +
+//  "RegexWarning+" +
+//  "StringMultiplicationByNonPositive+" +
+//  "SuspiciousMatches+" +
+//  "TransformNotMap+" +
+//  "TypeToType+" +
+//  "UndesirableTypeInference+" +
+//  "UnextendedSealedTrait+" +
+//  "UnitImplicitOrdering+" +
+//  "UnlikelyEquality+" +
+//  "UnlikelyToString+" +
+//  "UnnecessaryMethodCall+" +
+//  "UnnecessaryReturn+" +
+//  "UnnecessaryStringIsEmpty+" +
+//  "UnnecessaryStringNonEmpty+" +
+//  "UnsafeAbs+" +
+//  "UnthrownException+" +
+//  "UnusedForLoopIteratorValue+" +
+//  "UnusedParameter+" +
+//  "UseAbsNotSqrtSquare+" +
+//  "UseCbrt+" +
+//  "UseConditionDirectly+" +
+//  "UseContainsNotExistsEquals+" +
+//  "UseCountNotFilterLength+" +
+//  "UseExistsNotCountCompare+" +
+//  "UseExistsNotFilterEmpty+" +
+//  "UseExistsNotFilterIsEmpty+" +
+//  "UseExistsNotFindIsDefined+" +
+//  "UseExp+" +
+//  "UseExpm1+" +
+//  "UseFilterNotFlatMap+" +
+//  "UseFindNotFilterHead+" +
+//  "UseFlattenNotFilterOption+" +
+//  "UseFuncNotFold+" +
+//  "UseFuncNotReduce+" +
+//  "UseGetOrElseOnOption+" +
+//  "UseHypot+" +
+//  "UseIfExpression+" +
+//  "UseIsNanNotNanComparison+" +
+//  "UseIsNanNotSelfComparison+" +
+//  "UseLog10+" +
+//  "UseLog1p+" +
+//  "UseMapNotFlatMap+" +
+//  "UseMinOrMaxNotSort+" +
+//  "UseOptionGetOrElse+" +
+//  "UseOptionOrNull+" +
+//  "UseQuantifierFuncNotFold+" +
+//  "UseSignum+" +
+//  "UseSqrt+" +
+//  "UseUntilNotToMinusOne+" +
+//  "VariableAssignedUnusedValue+" +
+//  "WrapNullWithOption+" +
+//  "YodaConditions+" +
+//  "ZeroDivideBy"
 
 /*
  * scoverage: http://github.com/scoverage/sbt-scoverage
