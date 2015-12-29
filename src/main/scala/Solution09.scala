@@ -11,6 +11,7 @@ class Solution09 extends FlatSpec with ShouldMatchers {
     val packedList = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
 
     pack(list) should be (packedList)
+    println(splitListRecursive(list))
   }
 
   def pack(ls: List[_]): List[_] = ls match {
@@ -21,6 +22,11 @@ class Solution09 extends FlatSpec with ShouldMatchers {
       packed :: pack(theRest)
   }
 
+  def splitListRecursive(ls: List[_]): List[_] = ls match {
+    case Nil => Nil
+    case head :: Nil => List(head)
+    case _ => List(ls.takeWhile(x => ls.head.equals(x))) ++ List(ls.dropWhile(x => ls.head.equals(x)))
+  }
 
 
 }
