@@ -13,13 +13,14 @@ class Solution09 extends FlatSpec with ShouldMatchers {
     pack(list) should be (packedList)
   }
 
-  def pack(ls: List[Any]): List[Any] = ls match {
-    case Nil => Nil
+  def pack(ls: List[_]): List[_] = ls match {
+    case Nil => Nil 
     case List() => List()
     case _ =>
       val (packed, theRest) = ls span { _ == ls.head }
       packed :: pack(theRest)
   }
+
 
 
 }
