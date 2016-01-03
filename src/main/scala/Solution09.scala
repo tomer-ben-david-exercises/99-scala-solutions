@@ -14,7 +14,7 @@ class Solution09 extends FlatSpec with ShouldMatchers {
     println(splitListRecursive(list))
   }
 
-  def pack(ls: List[_]): List[_] = ls match {
+  def pack(ls: List[_]): List[List[_]] = ls match {
     case Nil => Nil 
     case List() => List()
     case _ =>
