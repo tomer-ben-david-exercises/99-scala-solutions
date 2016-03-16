@@ -1,3 +1,4 @@
+/** Given a phone nubmer calculate all its digit to alphanumeric permutations. */
 object Hello {
     def main(args: Array[String]) {
         println(findAllPerms(List(0,0)))   
